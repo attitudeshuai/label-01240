@@ -1,5 +1,5 @@
 # 多阶段构建 - 支持 ARM 和 X86
-FROM --platform=$BUILDPLATFORM maven:3.9.6-eclipse-temurin-17 AS builder
+FROM --platform=$BUILDPLATFORM maven:3.9.11-eclipse-temurin-24 AS builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests -B -Dfile.encoding=UTF-8 -s maven-settings.xml
 
 # 运行阶段
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:24-jre
 
 WORKDIR /app
 
