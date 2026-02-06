@@ -55,10 +55,14 @@ docker exec -i blog-mysql mysql -uroot -proot123 blog_db < backend/src/main/reso
 
 ## 测试账号
 
-| 角色 | 用户名 | 密码 |
-|------|--------|------|
-| 管理员 | admin | admin123 |
-| 普通用户 | testuser | test1234 |
+| 角色 | 用户名 | 密码 | 说明 |
+|------|--------|------|------|
+| 管理员 | admin | test123456 | 系统管理员 |
+| 普通用户 | zhangsan | test123456 | 全栈开发工程师 |
+| 普通用户 | lisi | test123456 | 前端开发者 |
+| 普通用户 | wangwu | test123456 | 后端架构师 |
+| 普通用户 | zhaoliu | test123456 | 产品经理 |
+| 普通用户 | xiaobai | test123456 | 编程新手 |
 
 ## 题目内容
 

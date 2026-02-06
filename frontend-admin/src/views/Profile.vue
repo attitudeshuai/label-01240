@@ -4,7 +4,7 @@
       <div class="header-bg"></div>
       <div class="header-content">
         <div class="avatar-wrapper">
-          <el-avatar :size="120" :src="userInfo?.avatar || ''" class="profile-avatar">
+          <el-avatar :size="100" :src="userInfo?.avatar || ''" class="profile-avatar">
             {{ userInfo?.username?.charAt(0)?.toUpperCase() }}
           </el-avatar>
           <el-tag v-if="userInfo?.role === 1" type="danger" effect="dark" class="role-tag">
@@ -151,17 +151,18 @@ function formatTime(time) {
 
 .profile-header {
   position: relative; margin-bottom: 32px;
-  .header-bg { height: 200px; background: var(--primary-gradient); border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
+  .header-bg { height: 80px; background: var(--primary-gradient); border-radius: 0 0 var(--radius-xl) var(--radius-xl); }
   .header-content { display: flex; align-items: flex-end; gap: 24px; padding: 0 32px; margin-top: -60px; position: relative; z-index: 1; }
   .avatar-wrapper { position: relative;
-    .profile-avatar { border: 4px solid var(--bg-card); }
-    .role-tag { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+    .profile-avatar { border: 4px solid var(--bg-card); box-shadow: var(--shadow-md); }
+    .role-tag { position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); }
   }
-  .user-info { flex: 1; padding-bottom: 16px;
-    .username { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
-    .bio { color: var(--text-secondary); font-size: 15px; margin-bottom: 12px; }
-    .user-meta { display: flex; gap: 24px; font-size: 14px; color: var(--text-secondary);
+  .user-info { flex: 1; padding-bottom: 16px; padding-top: 20px;
+    .username { font-size: 24px; font-weight: 700; color: #333; margin-bottom: 6px; }
+    .bio { color: #333; font-size: 14px; margin-bottom: 10px; }
+    .user-meta { display: flex; gap: 24px; font-size: 13px; color: #333;
       span { display: flex; align-items: center; gap: 6px; }
+      .el-icon { color: #666; }
     }
   }
 }
@@ -169,7 +170,7 @@ function formatTime(time) {
 .profile-content { padding: 0 16px; }
 
 .stats-card {
-  background: var(--bg-card); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
+  background: var(--bg-card); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 320px; box-sizing: border-box;
   h3 { font-size: 16px; font-weight: 600; margin-bottom: 20px; }
   .stats-grid { display: flex; flex-direction: column; gap: 16px; }
   .stat-item { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md);
@@ -182,7 +183,7 @@ function formatTime(time) {
 }
 
 .edit-card {
-  background: var(--bg-card); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
+  background: var(--bg-card); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); min-height: 320px; box-sizing: border-box;
   .card-header { margin-bottom: 28px;
     h3 { display: flex; align-items: center; gap: 8px; font-size: 18px; color: var(--text-primary); .el-icon { color: var(--primary-color); } }
   }
